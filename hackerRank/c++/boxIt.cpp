@@ -1,78 +1,75 @@
 #include<bits/stdc++.h>
 using namespace std;
-//Implement the class Box  
-//l,b,h are integers representing the dimensions of the box
-
-// The class should have the following functions : 
-
-// Constructors: 
-// Box();
-// Box(int,int,int);
-// Box(Box);
-
-
-// int getLength(); // Return box's length
-// int getBreadth (); // Return box's breadth
-// int getHeight ();  //Return box's height
-// long long CalculateVolume(); // Return the volume of the box
-
-//Overload operator < as specified
-//bool operator<(Box& b)
-
-//Overload operator << as specified
-//ostream& operator<<(ostream& out, Box& B)
-
-
 
 class Box {
-    private:   
-    int length;
-    int breadth;
-    int height;
+private:   
+    int l, b, h;
 
-    public:
+public:
+	// Poderia escrever também:
+	// Box() : l(0), b(0), h(0) {}
     Box() {
-        length = 0;
-        breadth = 0;
-        height = 0;
-    }
-    Box(int l, int b, int h) {
-        length = l;
-        breadth = b;
-        height = h;
+        l = 0;
+        b = 0;
+        h = 0;
     }
 
-    int getLength(Box b) {
-        return length;
+    Box(int x, int y, int z) : l(x), b(y), h(z) {}
+
+	// Agora, criarei um Construtor que irá copiar o conteúdo de uma Box para uma outra
+	Box (const Box& B) {
+		this->l = B.l;
+		this->b = B.b;
+		this->h = B.h;
+	};
+
+
+	// Getters
+
+	// const significa que não estamos modificando variáveis da classe
+    int getLength() const {
+        return l;
     }
-    int getBreadth() {
-        return breadth;
+    int getBreadth() const{
+        return b;
     }
-    int getHeight() {
-        return height;
+    int getHeight() const{
+        return h;
     }
     long long CalculateVolume() {
-        long long volume = length;
-        volume *= breadth;
-        volume *= height;
+        long long volume = (long long) l * b * h;
         return volume;
     }
     
-    friend ostream& operator<<(ostream& os, Box& b){
-        os << b.length << " " << b.breadth << " " << b.height;
-        return os;
-    }
 
-    friend bool operator < (Box& b1,Box& b2) {
-        if (b1.length < b2.length)
+	// Overload operator
+	// Para simplesmente usar Objeto < outro Objeto, preciso explicar o que fazer quando o programa se deparar com isso
+	// operator < (Box& b2) ,  ou seja, quando eu utilizar b1 < b2, ele irá comparar o b1 (vai ser o objeto padrão, para acessá-lo basta utilizar l, b, h)
+	// E tem também o b2, enviado para a função. Para acessá-lo, é necessário usar b2.l, b2.b, b2.h
+    bool operator < (Box& b2) {
+        if (l < b2.l)
             return true;
-        if (b1.breadth < b2.breadth && b1.length == b2.length)
+        if (b < b2.b && l == b2.l)
             return true;
-        if (b1.height < b2.height && b1.breadth == b2.breadth && b1.length == b2.length)
+        if (h < b2.h && b == b2.b && l == b2.l)
             return true;
         return false;
     }
     
+
+	// Overloading o output stream (<<)
+	// ostream& :  Referência para a output stream é o retorno da função
+	// ostream& out :  Parâmetro, referência para a stream de saída (output stream)
+	// Box& B :  Referência para o objeto
+
+	// Friend, o que significa??
+	// Essa função operator<< aceita apenas um parâmetro, mas estou com dois parâmetros
+	// Para manter os dois parâmetros, adicionamos o "friend"
+	// Uma função friend significa que podemos usar essa função de fora da minha classe, ou seja, podemos acessar os elementos "private" ou "protected"
+    friend ostream& operator<<(ostream& out, Box& b){
+        out << b.l << " " << b.b << " " << b.h;
+        return out;
+    }
 };
 
 
