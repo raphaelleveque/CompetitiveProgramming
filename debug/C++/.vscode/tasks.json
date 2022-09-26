@@ -3,8 +3,8 @@
     "tasks": [
         {
 			"type": "cppbuild",
-			"label": "C/C++: g++-11 build active file",
-			"command": "/opt/homebrew/bin/g++-11",
+			"label": "C/C++: g++-12 build active file",
+			"command": "/opt/homebrew/bin/g++-12",
             "args": [
                 "*.cpp",
                 "-o",
@@ -15,7 +15,7 @@
                 "kind": "build",
                 "isDefault": true
             },
-			"detail": "compiler: /opt/homebrew/bin/g++-11"
+			"detail": "compiler: /opt/homebrew/bin/g++-12"
         }
     ]
 }
