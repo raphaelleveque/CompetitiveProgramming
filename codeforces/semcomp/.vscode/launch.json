@@ -5,7 +5,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "program": "dbg",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "C/C++: g++-12 build active file"
