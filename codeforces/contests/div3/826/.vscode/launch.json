@@ -8,7 +8,7 @@
             "program": "exe",
             "args": [],
             "cwd": "${workspaceFolder}",
-            "preLaunchTask": "C/C++: gcc-12 build active file"
+            "preLaunchTask": "C/C++: g++-12 build active file"
         }
     ]
 }
