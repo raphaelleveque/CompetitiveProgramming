@@ -129,29 +129,29 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/build
 .PHONY : 49/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+v2.o: v2.cpp.o
+.PHONY : v2.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/main.cpp.o
-.PHONY : main.cpp.o
+v2.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/v2.cpp.o
+.PHONY : v2.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+v2.i: v2.cpp.i
+.PHONY : v2.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/main.cpp.i
-.PHONY : main.cpp.i
+v2.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/v2.cpp.i
+.PHONY : v2.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+v2.s: v2.cpp.s
+.PHONY : v2.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/main.cpp.s
-.PHONY : main.cpp.s
+v2.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/49.dir/build.make CMakeFiles/49.dir/v2.cpp.s
+.PHONY : v2.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 49"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... v2.o"
+	@echo "... v2.i"
+	@echo "... v2.s"
 .PHONY : help
 
 
